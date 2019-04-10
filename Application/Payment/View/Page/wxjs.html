@@ -1,0 +1,193 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <!-- 引入 Bootstrap -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="__CSS__/jquery.gritter.css" type="text/css">
+    <link rel="stylesheet" href="http://203.195.235.76/jssdk/css/style.css">
+    <script src="__JS__/jquery-1.8.3.min.js"></script>
+    <script src="__JS__/jquery.gritter.js"></script>
+    <title>微信 JS 样例</title>
+</head>
+
+
+<body>
+
+<div>
+    <button class="btn btn_primary" onclick="getJsConf()" >GetJsConf</button>
+    <br>appid = <span id='appid'></span>
+</div>
+
+<div class="wxapi_container">
+
+    <h3 id="menu-webview">界面操作接口</h3>
+
+    <span class="desc">隐藏右上角菜单接口</span>
+    <button class="btn btn_primary" onclick="hideOptionMenu()">hideOptionMenu</button>
+
+    <span class="desc">显示右上角菜单接口</span>
+    <button class="btn btn_primary" onclick="showOptionMenu()">showOptionMenu</button>
+
+    <span class="desc">关闭当前网页窗口接口</span>
+    <button class="btn btn_primary" onclick="closeWindow()">closeWindow</button>
+
+    <span class="desc">批量隐藏功能按钮接口</span>
+    <button class="btn btn_primary" onclick="hideMenuItems()">hideMenuItems</button>
+
+    <span class="desc">批量显示功能按钮接口</span>
+    <button class="btn btn_primary" onclick="showMenuItems()">showMenuItems</button>
+
+    <span class="desc">隐藏所有非基础按钮接口</span>
+    <button class="btn btn_primary" onclick="hideAllNonBaseMenuItem()">hideAllNonBaseMenuItem</button>
+
+    <span class="desc">显示所有功能按钮接口</span>
+    <button class="btn btn_primary" onclick="showAllNonBaseMenuItem()">showAllNonBaseMenuItem</button>
+
+    <h3 id="menu-scan">微信扫一扫</h3>
+    <span class="desc">调起微信扫一扫接口</span>
+    <button class="btn btn_primary" onclick="scanQRCode0()">scanQRCode(微信处理结果)</button>
+    <button class="btn btn_primary" onclick="scanQRCode1()">scanQRCode(直接返回结果)</button>
+
+</div>
+
+</body>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script>
+
+    function closeWindow()
+    {
+        wx.closeWindow();
+    }
+
+    function hideOptionMenu()
+    {
+        wx.hideOptionMenu();
+    }
+    function showOptionMenu()
+    {
+        wx.showOptionMenu();
+    }
+
+    function hideMenuItems()
+    {
+        wx.hideMenuItems({
+            menuList: [
+                'menuItem:readMode',
+                'menuItem:share:timeline',
+                'menuItem:copyUrl'
+            ]
+        });
+    }
+    function showMenuItems()
+    {
+        wx.showMenuItems({
+            menuList: [
+                'menuItem:readMode',
+                'menuItem:share:timeline',
+                'menuItem:copyUrl'
+            ]
+        });
+    }
+
+    function hideAllNonBaseMenuItem()
+    {
+        wx.hideAllNonBaseMenuItem();
+    }
+    function showAllNonBaseMenuItem()
+    {
+        wx.showAllNonBaseMenuItem();
+    }
+
+    function scanQRCode0()
+    {
+        wx.scanQRCode();
+    }
+    function scanQRCode1()
+    {
+        wx.scanQRCode({
+            needResult: 1,
+            desc: 'scanQRCode desc',
+            success: function (res) {
+                alert( JSON.stringify(res) );
+            }
+        });
+    }
+
+    function getJsConf()
+    {
+        d = {
+            "url": window.location.href
+        };
+        $.post(
+            '__APP__/Client/Index/getWechatJsApi',
+            JSON.stringify( d ),
+            function( data ) {
+                if( !data.app_id )
+                {
+                    tip( "No Js Conf, see log" );
+                    console.log( data );
+                }
+                else
+                {
+                    $( '#appid' ).html( '"'+data.app_id+'"' );
+                    //console.log( data );
+
+                    wx.config({
+                        debug: true,
+                        appId: data.app_id,
+                        timestamp: data.timestamp,
+                        nonceStr: data.nonceStr,
+                        signature: data.signature,
+                        jsApiList: [
+                            'checkJsApi',
+                            'onMenuShareTimeline',
+                            'onMenuShareAppMessage',
+                            'onMenuShareQQ',
+                            'onMenuShareWeibo',
+                            'onMenuShareQZone',
+                            'hideMenuItems',
+                            'showMenuItems',
+                            'hideAllNonBaseMenuItem',
+                            'showAllNonBaseMenuItem',
+                            'translateVoice',
+                            'startRecord',
+                            'stopRecord',
+                            'onVoiceRecordEnd',
+                            'playVoice',
+                            'onVoicePlayEnd',
+                            'pauseVoice',
+                            'stopVoice',
+                            'uploadVoice',
+                            'downloadVoice',
+                            'chooseImage',
+                            'previewImage',
+                            'uploadImage',
+                            'downloadImage',
+                            'getNetworkType',
+                            'openLocation',
+                            'getLocation',
+                            'hideOptionMenu',
+                            'showOptionMenu',
+                            'closeWindow',
+                            'scanQRCode',
+                            'chooseWXPay',
+                            'openProductSpecificView',
+                            'addCard',
+                            'chooseCard',
+                            'openCard'
+                        ]
+                    });
+                    /*
+                    */
+                }
+            }
+        );
+    }
+
+</script>
+
+</html>

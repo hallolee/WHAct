@@ -1,0 +1,169 @@
+[ 2018-09-23T18:13:14+08:00 ] 58.61.245.130 /ICSport/index.php//Admin/Profile/showMenu
+SQL: SELECT * FROM `auth_group_access` WHERE `uid` = 1  [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `auth_rule`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `auth_rule` WHERE `id` IN ('2','3','4','5','6','7','8','49','48','55','56','25','28','26','31','32','46','47','40','50','36','51','53','58','57','41','35','1','52','27','29','30','20','21') AND `category` !='api' AND `menu_title` !='' ORDER BY `order` asc   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `auth_rule` WHERE `category` = 'title' AND `id` IN ('8','2','4','7','6','3','5','1') ORDER BY `order` asc   [ RunTime:0.0003s ]
+
+[ 2018-09-23T18:13:14+08:00 ] 58.61.245.130 /ICSport/index.php//Admin/User/showDepList
+NOTIC: [8] Undefined index: pid /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 587 行.
+NOTIC: [8] Undefined index: name /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 590 行.
+NOTIC: [8] Undefined index: pid /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 605 行.
+SQL: SELECT `name`,`id`,`num`,`pid`,`cover`,`target_step_n`,`atime` FROM `department` WHERE ( `id` <> -1  ) AND `pid` = 0 ORDER BY atime desc LIMIT 0,10000   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+SQL: SELECT count(*) total FROM `department` WHERE ( `id` <> -1  ) AND `pid` = 0  [ RunTime:0.0004s ]
+
+[ 2018-09-23T18:13:14+08:00 ] 58.61.245.130 /ICSport/index.php//Admin/User/showUserList
+NOTIC: [8] Undefined index: where /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: phone /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 192 行.
+NOTIC: [8] Undefined index: nickname /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 192 行.
+NOTIC: [8] Undefined index: user /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 192 行.
+NOTIC: [8] Undefined index: job_num /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 195 行.
+NOTIC: [8] Undefined index: role_id /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 197 行.
+NOTIC: [8] Undefined index: status /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 199 行.
+NOTIC: [8] Undefined index: job_status /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 201 行.
+NOTIC: [8] Undefined index: dept_id /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 213 行.
+NOTIC: [8] Undefined index: time_start /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 233 行.
+NOTIC: [8] Undefined index: time_start /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 238 行.
+NOTIC: [8] Undefined index: time_end /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 240 行.
+SQL: SELECT `uid`,`user`,`phone`,`nickname`,`height`,`weight`,step_aim target_step_n,`age`,`sex`,job_coding job_num,`level`,`job_status`,`status`,`dept_id`,`dept_pid`,`atime` FROM `user_client` ORDER BY atime desc,dept_pid desc LIMIT 0,10   [ RunTime:0.0061s ]
+SQL: SELECT sum(like_n) like_n,`uid` FROM `user_step` WHERE `uid` IN ('14240','14239','14238','14235','14234','14233','14232','14231','14230','14229') AND `atime` >= 1537632000 GROUP BY uid   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `department` LIMIT 0,1000   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `level`  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined offset: 0 /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 272 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined offset: 0 /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 272 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+SQL: SELECT count(*) total FROM `user_client`  [ RunTime:0.0025s ]
+
+[ 2018-09-23T21:01:59+08:00 ] 58.61.245.130 /ICSport/index.php//Admin/Login/checkToken
+SQL: SELECT * FROM `auth_group_access` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `auth_group` WHERE `rules` = '0' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-09-23T21:02:00+08:00 ] 58.61.245.130 /ICSport/index.php//Admin/Profile/showInfo
+SQL: SELECT `icon`,`phone`,`nickname`,`name`,`status`,`dep_role`,`role_dept_id`,`roles`,`atime`,`user` FROM `user_backend` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT a.group_id FROM auth_group_access a INNER JOIN auth_group b on b.id = a.group_id  WHERE a.uid = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id` FROM `auth_group` WHERE `rules` = '0' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: group_id /data/test/ICSport/Application/Admin/Controller/ProfileController.class.php 第 36 行.
+SQL: SELECT `id` FROM `department` WHERE `pid` = 0  [ RunTime:0.0004s ]
+
+[ 2018-09-23T23:13:17+08:00 ] 58.61.245.130 /ICSport/index.php//Admin/User/showDepList
+NOTIC: [8] Undefined index: pid /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 587 行.
+NOTIC: [8] Undefined index: name /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 590 行.
+NOTIC: [8] Undefined index: pid /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 605 行.
+SQL: SELECT `name`,`id`,`num`,`pid`,`cover`,`target_step_n`,`atime` FROM `department` WHERE ( `id` <> -1  ) AND `pid` = 0 ORDER BY atime desc LIMIT 0,10000   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+NOTIC: [8] Undefined index: self /data/test/ICSport/Application/Admin/Controller/UserController.class.php 第 627 行.
+SQL: SELECT count(*) total FROM `department` WHERE ( `id` <> -1  ) AND `pid` = 0  [ RunTime:0.0004s ]
+
+[ 2018-09-23T23:13:17+08:00 ] 58.61.245.130 /ICSport/index.php//Admin/User/showUserList
+NOTIC: [8] Undefined index: where /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: phone /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 192 行.
+NOTIC: [8] Undefined index: nickname /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 192 行.
+NOTIC: [8] Undefined index: user /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 192 行.
+NOTIC: [8] Undefined index: job_num /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 195 行.
+NOTIC: [8] Undefined index: role_id /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 197 行.
+NOTIC: [8] Undefined index: status /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 199 行.
+NOTIC: [8] Undefined index: job_status /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 201 行.
+NOTIC: [8] Undefined index: dept_id /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 213 行.
+NOTIC: [8] Undefined index: time_start /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 233 行.
+NOTIC: [8] Undefined index: time_start /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 238 行.
+NOTIC: [8] Undefined index: time_end /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 240 行.
+SQL: SELECT `uid`,`user`,`phone`,`nickname`,`height`,`weight`,step_aim target_step_n,`age`,`sex`,job_coding job_num,`level`,`job_status`,`status`,`dept_id`,`dept_pid`,`atime` FROM `user_client` ORDER BY atime desc,dept_pid desc LIMIT 0,10   [ RunTime:0.0059s ]
+SQL: SELECT sum(like_n) like_n,`uid` FROM `user_step` WHERE `uid` IN ('14240','14239','14238','14235','14234','14233','14232','14231','14230','14229') AND `atime` >= 1537632000 GROUP BY uid   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `department` LIMIT 0,1000   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `level`  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined offset: 0 /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 272 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined offset: 0 /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 272 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+NOTIC: [8] Undefined variable: res_like /data/test/ICSport/Application/Admin/Model/UserModel.class.php 第 274 行.
+SQL: SELECT count(*) total FROM `user_client`  [ RunTime:0.0026s ]
+

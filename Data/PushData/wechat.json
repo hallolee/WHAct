@@ -1,0 +1,72 @@
+{
+    "3":{
+        "desc": "微信公众号推送(major 3)",
+        "class":"Push\\Controller\\WeChatPushController",
+        "children": {
+            "1": {
+                "desc":"Official Accounts( 公众号：呼吸100，minor 1 )",
+                "fun":"HuXiHundred",
+                "1":{
+                    "desc":"push data(当前 push_id 包含的数据信息, basic、data 数据均为必填数据)",
+                    "template_id":"C1dApMVgtqnEXa_hJW-sH5q6gFQq0DZkBtovCtZyF3Q",
+                    "basic":{
+                        "openid":"user openid",
+                        "url":"target url"
+                    },
+                    "data": {
+                        "first":{
+                            "value":"抬头信息",
+                            "color":"字体颜色"
+                        },
+                        "name":{
+                            "value":"内容信息1",
+                            "color":"字体颜色"
+                        },
+                        "expDate":{
+                            "value":"内容信息2",
+                            "color":"字体颜色"
+                        },
+                        "remark":{
+                            "value":"备注",
+                            "color":"字体颜色"
+                        }
+                    }
+                },
+                "2":{
+                    "desc":"push data(当前 push_id 包含的数据信息, basic、data 数据均为必填数据)",
+                    "template_id":"E04cO8ho-u42nf98uxIp78jqL_-HFeCyZuFwQcbkSvg",
+                    "basic":{
+                        "openid":"user openid",
+                        "url":"target url"
+                    },
+                    "data": {
+                        "first":{
+                            "value":"抬头信息",
+                            "color":"字体颜色"
+                        },
+                        "keyword1":{
+                            "value":"内容信息1",
+                            "color":"字体颜色"
+                        },
+                        "keyword2":{
+                            "value":"内容信息1",
+                            "color":"字体颜色"
+                        },
+                        "keyword3":{
+                            "value":"内容信息1",
+                            "color":"字体颜色"
+                        },
+                        "keyword4":{
+                            "value":"内容信息1",
+                            "color":"字体颜色"
+                        },
+                        "remark":{
+                            "value":"备注",
+                            "color":"字体颜色"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

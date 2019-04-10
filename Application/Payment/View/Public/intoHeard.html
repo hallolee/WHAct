@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
+    <meta content="telephone=no" name="format-detection" />
+    <title>{$title}</title>
+    <link href="__CSS__/common.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="__JS__/jquery-1.8.3.min.js"></script>
+    <script src="__JS__/jquery.slides.min.js"></script>
+    <script src="__JS__/common.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+    <script>
+        var token = '{$token}';
+        var datoken = '{$datoken}';
+
+        function lock(){
+            scroll(0,0);
+            window.ontouchmove=function(e){
+                e.preventDefault && e.preventDefault();
+                e.returnValue=false;
+                e.stopPropagation && e.stopPropagation();
+                return false;
+            }
+        }
+
+        function unlock(){
+
+            window.ontouchmove=function(e){
+                e.preventDefault && e.preventDefault();
+                e.returnValue=true;
+                e.stopPropagation && e.stopPropagation();
+                return true;
+            }
+        }
+
+        wx.config({
+            debug: false,
+            appId: '{$app_id}',
+            timestamp: '{$timestamp}',
+            nonceStr: '{$nonceStr}',
+            signature: '{$signature}',
+            jsApiList: [
+                "onMenuShareTimeline","onMenuShareAppMessage"
+            ]
+        });
+
+        wx.ready(function () {
+            wx.onMenuShareTimeline({
+                title: '罗宾医生', // 分享标题
+                desc: '罗宾医生新版本', // 分享描述
+                link: '{$base}/index.php/Login/login/from_user/{$from_user}', // 分享链接
+                imgUrl: '{$base}/Tpl/Home/Public/images/share_logo.jpg', // 分享图标
+                success: function () {
+//                    alert("分享成功");
+                    $(".hui_2").hide();
+
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+            wx.onMenuShareAppMessage({
+                title: '罗宾医生', // 分享标题
+                desc: '罗宾医生新版本', // 分享描述
+                link: '{$base}/index.php/Login/login/from_user/{$from_user}', // 分享链接
+                imgUrl: '{$base}/Tpl/Home/Public/images/share_logo.jpg', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    // alert("分享成功");
+                    $(".hui_2").hide();
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        });
+    </script>
+    <include file='Public:statistics' />
+    <include file='Public/common.js.html' />
+</head>

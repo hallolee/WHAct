@@ -1,0 +1,3845 @@
+{
+    "Admin/Login/login": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "title": "用户名 ",
+                    "default": "admin",
+                    "examples": [
+                        "admin"
+                    ]
+                },
+                "pass": {
+                    "type": "string",
+                    "title": "密码(md5)",
+                    "default": 0,
+                    "examples": [
+                        12.5
+                    ]
+                }
+            },
+            "required": [
+                "name",
+                "pass"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "sadfasdfefw3232",
+                    "examples": [
+                        1
+                    ]
+                },
+                "status": {
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "type": "string",
+                    "title": "The Error Schema ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "登录",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Login/login"
+        }
+    },
+    "Admin/Login/checkToken": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "sadfasdfefw3232",
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "time": {
+                    "type": "integer",
+                    "title": "到期时间戳",
+                    "default": "sadfasdfefw3232",
+                    "examples": [
+                        1
+                    ]
+                },
+                "status": {
+                    "type": "integer",
+                    "title": "状态码：<br/>0：正常,<br/>8：token已失效",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "type": "string",
+                    "title": "错误提示",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "检查token",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Login/checkToken"
+        }
+    },
+
+	"Admin/Login/getVerifyCode": {
+        "response": {
+            "type": "object",
+            "properties": {
+                "img_base64": {
+                    "type": "string",
+                    "examples": [
+                        "101asdh8ferhf75gh857gh57g"
+                    ],
+                    "title": "图片base64"
+                },
+                "id": {
+                    "type": "string",
+                    "examples": [
+                        "1244534"
+                    ],
+                    "title": "标识id"
+                }
+            }
+        },
+        "basic": {
+            "desc": "获取验证码",
+            "method": "get",
+            "url": "/WHAct/index.php/Admin/Login/getVerifyCode"
+        }
+    },
+    "Admin/Login/checkVerifyCode": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "verify": {
+                    "examples": [
+                        "458de"
+                    ],
+                    "type": "string",
+                    "required": true,
+                    "title": "验证码"
+                },
+                "id": {
+                    "examples": [
+                        "0729"
+                    ],
+                    "type": "string",
+                    "required": true,
+                    "title": "获取验证码时生成"
+                }
+            }
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "examples": [
+                        1
+                    ],
+                    "type": "integer",
+                    "title": "状态码：<br/>0、成功，<br/> 1、验证失败，<br/> 5、 参数错误，<br"
+                },
+                "errstr": {
+                    "examples": [
+                        " "
+                    ],
+                    "type": "string",
+                    "title": "错误提示"
+                }
+            }
+        },
+        "basic": {
+            "desc": "校验验证码",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Login/checkVerifyCode"
+        }
+    },
+    "Admin/User/showUserList": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "idcard": {
+                    "type": "string",
+                    "title": "身份證号码",
+                    "default": "",
+                    "examples": [
+                        "32231344114123"
+                    ]
+                },
+                "user": {
+                    "type": "string",
+                    "title": "账号",
+                    "default": "",
+                    "examples": [
+                        "wi"
+                    ]
+                },
+                "fid": {
+                    "type": "integer",
+                    "title": "公司id（超管使用）",
+                    "default": "",
+                    "examples": [
+                        "wi"
+                    ]
+                },
+                "dept_id": {
+                    "type": "integer",
+                    "title": "部门id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "nickname": {
+                    "type": "string",
+                    "title": "",
+                    "default": "用户昵称",
+                    "examples": [
+                        "wi"
+                    ]
+                },
+                "phone": {
+                    "type": "integer",
+                    "title": "手机号",
+                    "default": 0,
+                    "examples": [
+                        13112236363
+                    ]
+                },
+                "status": {
+                    "type": "integer",
+                    "title": "状态；<br/>1正常；2禁用",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "sex": {
+                    "type": "integer",
+                    "title": "性别；0男；1女",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "page_start": {
+                    "type": "integer",
+                    "title": "开始页码数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_limit": {
+                    "type": "integer",
+                    "title": "单页数量",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "total": {
+                    "type": "integer",
+                    "title": "总页数",
+                    "default": 0,
+                    "examples": [
+                        100
+                    ]
+                },
+                "page_start": {
+                    "type": "integer",
+                    "title": "开始页码数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_n": {
+                    "type": "integer",
+                    "title": "当前页面条数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "uid": {
+                                "type": "integer",
+                                "title": "用户uid",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "nickname": {
+                                "type": "string",
+                                "title": "姓名",
+                                "default": "",
+                                "examples": [
+                                    "张三"
+                                ]
+                            },
+                            "idcard": {
+                                "type": "int",
+                                "title": "身份证号码",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "sex": {
+                                "type": "integer",
+                                "title": "性别；1男；2女",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "phone": {
+                                "type": "integer",
+                                "title": "手机号",
+                                "default": 0,
+                                "examples": [
+                                    13362656532
+                                ]
+                            },
+                            "dept_name": {
+                                "type": "string",
+                                "title": "部门名称",
+                                "default": 0,
+                                "examples": [
+                                    "企业贷款"
+                                ]
+                            },
+                            "firm_name": {
+                                "type": "string",
+                                "title": "公司名称（超管显示）",
+                                "default": 0,
+                                "examples": [
+                                    "企业贷款"
+                                ]
+                            },
+                            "status": {
+                                "type": "integer",
+                                "title": "状态；<br/>1正常；2禁用",
+                                "default": 0,
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "atime": {
+                                "type": "integer",
+                                "title": "添加时间(时间戳)",
+                                "default": 0,
+                                "examples": [
+                                    116541
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "basic": {
+            "desc": "用户列表",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/showUserList"
+        }
+    },
+    "Admin/Profile/showInfo": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                }
+            },
+            "required": [
+                "token"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "uid": {
+                    "type": "integer",
+                    "title": "uid",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "admin_role": {
+                    "type": "integer",
+                    "title": "是否为超管：<br/>1、是；<br/>2、否",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "role_firm_id": {
+                    "type": "array",
+                    "title": "有权限的公司id",
+                    "items": {
+                        "type": "integer",
+                        "title": "有权限的公司id",
+                        "default": 0,
+                        "examples": [
+                            1
+                        ]
+                    },
+                    "examples": [
+                        1
+                    ]
+                },
+                "user": {
+                    "type": "string",
+                    "title": "账号",
+                    "default": "",
+                    "examples": [
+                        "2324e"
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "title": "姓名",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "nickname": {
+                    "type": "string",
+                    "title": "昵称",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "role_id": {
+                    "type": "string",
+                    "title": "角色id；<br/>1、分行行长<br/>2、分行经理；<br/>3、员工",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "phone": {
+                    "type": "integer",
+                    "title": "手机号",
+                    "default": 0,
+                    "examples": [
+                        13362656532
+                    ]
+                },
+                "status": {
+                    "type": "integer",
+                    "title": "状态：<br/>1、正常；2、禁用",
+                    "default": 0,
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "atime": {
+                    "type": "integer",
+                    "title": "添加时间(时间戳)",
+                    "default": 0,
+                    "examples": [
+                        116541
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "用户个人资料",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Profile/showInfo"
+        }
+    },
+    "Admin/User/showUserDetail": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "uid": {
+                    "type": "integer",
+                    "title": "用户uid",
+                    "default": "",
+                    "examples": [
+                        "323"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "uid"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "uid": {
+                    "type": "integer",
+                    "title": "用户uid",
+                    "default": "",
+                    "examples": [
+                        "323"
+                    ]
+                },
+                "openid": {
+                    "type": "string",
+                    "title": "openid",
+                    "default": "",
+                    "examples": [
+                        "132432452341123"
+                    ]
+                },
+                "nickname": {
+                    "type": "string",
+                    "title": "用户昵称",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "idcard": {
+                    "type": "string",
+                    "title": "身份证号码",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "phone": {
+                    "type": "integer",
+                    "title": "手机号",
+                    "default": 0,
+                    "examples": [
+                        1365252522
+                    ]
+                },
+                "icon": {
+                    "type": "string",
+                    "title": "头像地址",
+                    "default": "",
+                    "examples": [
+                        "ww.erfe.df/sdfdsf.jpg"
+                    ]
+                },
+                "cover": {
+                    "type": "string",
+                    "title": "封面地址",
+                    "default": "",
+                    "examples": [
+                        "ww.erfe.df/sdfdsf.jpg"
+                    ]
+                },
+                "sex": {
+                    "type": "integer",
+                    "title": "性别:<br/>1、男，<br/>2、女",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "status": {
+                    "type": "integer",
+                    "title": "状态；<br/>1正常；2禁用",
+                    "default": 0,
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "dept_id": {
+                    "type": "integer",
+                    "title": "部门id",
+                    "default": 0,
+                    "examples": [
+                        2
+                    ]
+                },
+                "fid": {
+                    "type": "integer",
+                    "title": "公司id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "fname": {
+                    "type": "integer",
+                    "title": "公司名称",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "dept_name": {
+                    "type": "integer",
+                    "title": "部门名称",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "age": {
+                    "type": "string",
+                    "title": "年龄",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "height": {
+                    "type": "string",
+                    "title": "身高",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "weight": {
+                    "type": "integer",
+                    "title": "体重",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "step_n": {
+                    "type": "integer",
+                    "title": "累计步数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "用户详情",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/showUserDetail"
+        }
+    },
+    "Admin/User/editUser": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "uid": {
+                    "type": "integer",
+                    "title": "uid(新增时忽略)",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "user": {
+                    "type": "string",
+                    "title": "账号",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "openid": {
+                    "type": "string",
+                    "title": "openid",
+                    "default": 0,
+                    "examples": [
+                        "1rewqrwer"
+                    ]
+                },
+                "nickname": {
+                    "type": "string",
+                    "title": "用户昵称",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "idcard": {
+                    "type": "string",
+                    "title": "身份证号码",
+                    "default": "",
+                    "examples": [
+                        "5121613219681618651165"
+                    ]
+                },
+                "phone": {
+                    "type": "integer",
+                    "title": "手机号",
+                    "default": 0,
+                    "examples": [
+                        1365252522
+                    ]
+                },
+                "icon": {
+                    "type": "string",
+                    "title": "头像地址",
+                    "default": "",
+                    "examples": [
+                        "ww.erfe.df/sdfdsf.jpg"
+                    ]
+                },
+                "sex": {
+                    "type": "integer",
+                    "title": "性别 : <br/>1、男，<br/>2、女",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "status": {
+                    "type": "integer",
+                    "title": "状态；<br/>1正常；2禁用",
+                    "default": 0,
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "fid": {
+                    "type": "integer",
+                    "title": "公司id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "dept_id": {
+                    "type": "integer",
+                    "title": "部门id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "age": {
+                    "type": "integer",
+                    "title": "年龄",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "height": {
+                    "type": "string",
+                    "title": "身高",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "weight": {
+                    "type": "string",
+                    "title": "体重",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "user",
+                "role_id",
+                "fid",
+                "status",
+                "dept_id"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败；<br/>5参数错误；<br/>12、账号已存在<br/>13手机号已存在<br/>20021权限不足, 无法修改部门<br/>21000、分行行长已存在",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "添加/编辑用户",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/editUser"
+        }
+    },
+    "Admin/Profile/changePwd": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "examples": [
+                        "101sdhfeh8rthga3f1eed21"
+                    ],
+                    "type": "string",
+                    "title": "token"
+                },
+                "old_pass": {
+                    "examples": [
+                        "e10adc3949ba59abbe56e057f20f883e"
+                    ],
+                    "type": "string",
+                    "title": "原密码(已经过md5 加密)"
+                },
+                "new_pass": {
+                    "examples": [
+                        "e10adc3949ba59abbe56e057f20f883e"
+                    ],
+                    "type": "string",
+                    "title": "新密码(已经过md5 加密)"
+                }
+            }
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "examples": [
+                        1
+                    ],
+                    "type": "integer",
+                    "title": "状态码：<br/>0 修改成功，<br/> 4 修改失败，<br/>7 原密码错误<br/> 20 不能与原密码相同"
+                },
+                "errstr": {
+                    "examples": [
+                        " "
+                    ],
+                    "type": "string",
+                    "title": "错误提示"
+                }
+            }
+        },
+        "basic": {
+            "desc": "修改密码",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Profile/changePwd"
+        }
+    },
+    "Admin/User/showAdminList": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "name": {
+                    "$id": "/properties/name",
+                    "type": "string",
+                    "title": "分类名称",
+                    "default": "",
+                    "examples": [
+                        "类型1"
+                    ]
+                },
+                "phone": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "手机号",
+                    "default": 0,
+                    "examples": [
+                        13112236363
+                    ]
+                },
+                "group_id": {
+                    "$id": "/properties/role_id",
+                    "type": "integer",
+                    "title": "权限组id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "firm_id": {
+                    "$id": "/properties/data/items/properties/role_id",
+                    "type": "string",
+                    "title": "公司id（超管显示）",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "page_start": {
+                    "$id": "/properties/page_start",
+                    "type": "integer",
+                    "title": "开始页码数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_limit": {
+                    "$id": "/properties/page_limit",
+                    "type": "integer",
+                    "title": "单页数量",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "total": {
+                    "$id": "/properties/total",
+                    "type": "integer",
+                    "title": "总页数",
+                    "default": 0,
+                    "examples": [
+                        100
+                    ]
+                },
+                "page_start": {
+                    "$id": "/properties/page_start",
+                    "type": "integer",
+                    "title": "开始页码数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_n": {
+                    "$id": "/properties/page_n",
+                    "type": "integer",
+                    "title": "当前页面条数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "data": {
+                    "$id": "/properties/data",
+                    "type": "array",
+                    "items": {
+                        "$id": "/properties/data/items",
+                        "type": "object",
+                        "properties": {
+                            "uid": {
+                                "$id": "/properties/data/items/properties/id",
+                                "type": "integer",
+                                "title": "UID",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "user": {
+                                "$id": "/properties/data/items/properties/user",
+                                "type": "string",
+                                "title": "账号",
+                                "default": "",
+                                "examples": [
+                                    "2324e"
+                                ]
+                            },
+                            "name": {
+                                "$id": "/properties/data/items/properties/name",
+                                "type": "string",
+                                "title": "姓名",
+                                "default": "",
+                                "examples": [
+                                    "张三"
+                                ]
+                            },
+                            "nickname": {
+                                "$id": "/properties/data/items/properties/nickname",
+                                "type": "string",
+                                "title": "昵称",
+                                "default": "",
+                                "examples": [
+                                    "张三"
+                                ]
+                            },
+                            "role_id": {
+                                "$id": "/properties/data/items/properties/role_id",
+                                "type": "string",
+                                "title": "角色id",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "firm_id": {
+                                "$id": "/properties/data/items/properties/role_id",
+                                "type": "integer",
+                                "title": "公司id",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "firm_name": {
+                                "$id": "/properties/data/items/properties/role_id",
+                                "type": "string",
+                                "title": "公司名称（超管显示）",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "phone": {
+                                "$id": "/properties/data/items/properties/phone",
+                                "type": "integer",
+                                "title": "手机号",
+                                "default": 0,
+                                "examples": [
+                                    13362656532
+                                ]
+                            },
+                            "status": {
+                                "$id": "/properties/data/items/properties/status",
+                                "type": "integer",
+                                "title": "状态：<br/>1、正常；2、禁用",
+                                "default": 0,
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "atime": {
+                                "$id": "/properties/data/items/properties/atime",
+                                "type": "integer",
+                                "title": "添加时间(时间戳)",
+                                "default": 0,
+                                "examples": [
+                                    116541
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "basic": {
+            "desc": "管理员列表",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/showAdminList"
+        }
+    },
+    "Admin/User/showAdminDetail": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "uid": {
+                    "$id": "/properties/uid",
+                    "type": "integer",
+                    "title": "用户uid",
+                    "default": "",
+                    "examples": [
+                        "323"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "uid"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "uid": {
+                    "$id": "/properties/data/items/properties/uid",
+                    "type": "integer",
+                    "title": "uid",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "user": {
+                    "$id": "/properties/data/items/properties/user",
+                    "type": "string",
+                    "title": "账号",
+                    "default": "",
+                    "examples": [
+                        "2324e"
+                    ]
+                },
+                "dep_role": {
+                    "$id": "/properties/dep_role",
+                    "type": "string",
+                    "title": "是否为部门超管：<br/>1、是；<br/>2、否",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "name": {
+                    "$id": "/properties/data/items/properties/name",
+                    "type": "string",
+                    "title": "姓名",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "nickname": {
+                    "$id": "/properties/data/items/properties/nickname",
+                    "type": "string",
+                    "title": "昵称",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "icon": {
+                    "$id": "/properties/data/items/properties/icon",
+                    "type": "string",
+                    "title": "头像",
+                    "default": "",
+                    "examples": [
+                        "ww.d.d/dfe.jpg"
+                    ]
+                },
+                "role_id": {
+                    "$id": "/properties/properties/role_id",
+                    "type": "string",
+                    "title": "角色id",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "admin_role": {
+                    "$id": "/properties/dep_role",
+                    "type": "string",
+                    "title": "是否超管（超管显示）",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "role_firm_id": {
+                    "$id": "/properties/role_dept_id",
+                    "type": "array",
+                    "title": "可管理公司id（超管显示）",
+                    "items": {
+                        "title": "",
+                        "type": "integer",
+                        "examples": [
+                            "121,2,3"
+                        ]
+                    },
+                    "examples": [
+                        "121,2,3"
+                    ]
+                },
+                "firm_id": {
+                    "$id": "/properties/data/items/properties/role_id",
+                    "type": "integer",
+                    "title": "公司id",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "firm_name": {
+                    "$id": "/properties/data/items/properties/role_id",
+                    "type": "string",
+                    "title": "公司名称",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "phone": {
+                    "$id": "/properties/data/items/properties/phone",
+                    "type": "integer",
+                    "title": "手机号",
+                    "default": 0,
+                    "examples": [
+                        13362656532
+                    ]
+                },
+                "status": {
+                    "$id": "/properties/data/items/properties/status",
+                    "type": "integer",
+                    "title": "状态：<br/>1、正常；2、禁用",
+                    "default": 0,
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "atime": {
+                    "$id": "/properties/data/items/properties/atime",
+                    "type": "integer",
+                    "title": "添加时间(时间戳)",
+                    "default": 0,
+                    "examples": [
+                        116541
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "管理员详情",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/showAdminDetail"
+        }
+    },
+    "Admin/User/editAdmin": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "uid": {
+                    "$id": "/properties/uid",
+                    "type": "integer",
+                    "title": "uid(新增时忽略)",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "admin_role": {
+                    "$id": "/properties/dep_role",
+                    "type": "string",
+                    "title": "是否为超管（超管显示）：<br/>1、是；<br/>2、否",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "role_firm_id": {
+                    "$id": "/properties/role_dept_id",
+                    "type": "array",
+                    "title": "可管理公司id（超管显示）",
+                    "items": {
+                        "title": "部门id",
+                        "type": "integer",
+                        "examples": [
+                            "121,2,3"
+                        ]
+                    },
+                    "examples": [
+                        "121,2,3"
+                    ]
+                },
+                "user": {
+                    "$id": "/properties/user",
+                    "type": "string",
+                    "title": "账号",
+                    "default": "",
+                    "examples": [
+                        "2324e"
+                    ]
+                },
+                "pass": {
+                    "$id": "/properties/user",
+                    "type": "string",
+                    "title": "密码(md5)",
+                    "default": "",
+                    "examples": [
+                        "2324e"
+                    ]
+                },
+                "group_id": {
+                    "$id": "/properties/user",
+                    "type": "integer",
+                    "title": "权限组id",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "icon": {
+                    "$id": "/properties/icon",
+                    "type": "string",
+                    "title": "头像",
+                    "default": "",
+                    "examples": [
+                        "2324.jpg"
+                    ]
+                },
+                "name": {
+                    "$id": "/properties/name",
+                    "type": "string",
+                    "title": "姓名",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "nickname": {
+                    "$id": "/properties/nickname",
+                    "type": "string",
+                    "title": "昵称",
+                    "default": "",
+                    "examples": [
+                        "张三"
+                    ]
+                },
+                "role_id": {
+                    "$id": "/properties/role_id",
+                    "type": "string",
+                    "title": "角色id",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "phone": {
+                    "$id": "/properties/phone",
+                    "type": "integer",
+                    "title": "手机号",
+                    "default": 0,
+                    "examples": [
+                        13362656532
+                    ]
+                },
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "状态：<br/>1、正常；2、禁用",
+                    "default": 0,
+                    "examples": [
+                        "1"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "user",
+                "group_id",
+                "role_id",
+                "phone",
+                "status"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "状态码",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "$id": "/properties/error",
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "添加/编辑管理员",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/editAdmin"
+        }
+    },
+    "Admin/User/delAdmin": {
+        "params": {
+            "$id": "http://example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "uid": {
+                    "$id": "/properties/uid",
+                    "type": "integer",
+                    "title": "uid",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id"
+            ]
+        },
+        "response": {
+            "$id": "http://example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败；<br/>5参数错误；<br/>13、数据不存在",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "$id": "/properties/error",
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "删除管理员",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/delAdmin"
+        }
+    },
+    "Admin/User/editUserDep": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "uid": {
+                    "$id": "/properties/uid",
+                    "type": "array",
+                    "title": "用户uid（数组表示批量修改）",
+                    "items": {
+                        "$id": "/properties/uid/items",
+                        "type": "integer",
+                        "title": "uid",
+                        "default": 0,
+                        "examples": [
+                            323
+                        ]
+                    }
+                },
+                "dept_id": {
+                    "$id": "/properties/dept_id",
+                    "type": "integer",
+                    "title": "部门id",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "uid"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败；<br/>5参数错误；<br/>12用户不存在<br/>13部门不存在",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "$id": "/properties/error",
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "修改用户部门",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/editUserDep"
+        }
+    },
+    "Admin/User/editDep": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "数据id(新增时忽略)",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "name": {
+                    "$id": "/properties/data/items/properties/name",
+                    "type": "string",
+                    "title": "部门名称",
+                    "default": "",
+                    "examples": [
+                        "黄金"
+                    ]
+                },
+                "fid": {
+                    "$id": "/properties/pid",
+                    "type": "integer",
+                    "title": "公司id(超管显示)",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "name",
+                "cover"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败；<br/>5参数错误",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "$id": "/properties/error",
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "添加/编辑部门",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/editDep"
+        }
+    },
+    "Admin/User/delDep": {
+        "params": {
+            "$id": "http://example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id"
+            ]
+        },
+        "response": {
+            "$id": "http://example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败；<br/>5参数错误；<br/>12该部门下还有用户；<br/>13、数据不存在",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "$id": "/properties/error",
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "删除部门",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/delDep"
+        }
+    },
+    "Admin/User/showDeptDetail": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id",
+                "cover"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "部门id",
+                    "default": 0,
+                    "examples": [
+                        77
+                    ]
+                },
+                "name": {
+                    "$id": "/properties/name",
+                    "type": "string",
+                    "title": "部门名称",
+                    "default": "",
+                    "examples": [
+                        "财会"
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "部门详情",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/showDeptDetail"
+        }
+    },
+    "Admin/User/showDepList": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "name": {
+                    "$id": "/properties/data/items/properties/name",
+                    "type": "string",
+                    "title": "部门名称",
+                    "default": "",
+                    "examples": [
+                        "黄金"
+                    ]
+                },
+                "fid": {
+                    "$id": "/properties/pid",
+                    "type": "integer",
+                    "title": "公司id",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "self": {
+                    "$id": "/properties/self",
+                    "type": "integer",
+                    "title": "是否包含一级部门，<br/>1是<br/>2否",
+                    "default": "",
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "name",
+                "fid"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "total": {
+                    "$id": "/properties/total",
+                    "type": "integer",
+                    "title": "总页数",
+                    "default": 0,
+                    "examples": [
+                        100
+                    ]
+                },
+                "page_start": {
+                    "$id": "/properties/page_start",
+                    "type": "integer",
+                    "title": "开始页码数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_n": {
+                    "$id": "/properties/page_n",
+                    "type": "integer",
+                    "title": "当前页面条数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "data": {
+                    "$id": "/properties/data",
+                    "type": "array",
+                    "items": {
+                        "$id": "http : //example.com/example.json",
+                        "type": "object",
+                        "definitions": [],
+                        "$schema": "http : //json-schema.org/draft-07/schema#",
+                        "properties": {
+                            "id": {
+                                "$id": "/properties/id",
+                                "type": "integer",
+                                "title": "部门id",
+                                "default": 0,
+                                "examples": [
+                                    77
+                                ]
+                            },
+                            "name": {
+                                "type": "string",
+                                "title": "部门名称",
+                                "default": "",
+                                "examples": [
+                                    "财会"
+                                ]
+                            },
+                            "num": {
+                                "type": "integer",
+                                "title": "部门人数",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "basic": {
+            "desc": "部门列表",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/showDepList"
+        }
+    },
+    "": {
+        "basic": {
+            "url": "/WHAct/index.php/Admin/Activity/showActUserSignList",
+            "method": "POST",
+            "desc": "用户签到列表"
+        },
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": 0,
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "page_start": {
+                    "type": "integer",
+                    "title": "开始页码数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_limit": {
+                    "type": "integer",
+                    "title": "单页数量",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "time_start ": {
+                    "type": "integer",
+                    "title": "开始时间（不传返回活动日期内全部）",
+                    "default": 0,
+                    "examples": [
+                        1578956541
+                    ]
+                },
+                "time_end": {
+                    "type": "integer",
+                    "title": "结束时间（不传返回活动日期内全部）",
+                    "default": 0,
+                    "examples": [
+                        1578956546
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "title": "",
+            "required": [
+                "total",
+                "page_start",
+                "page_n",
+                "data"
+            ],
+            "properties": {
+                "total": {
+                    "type": "integer",
+                    "title": "总页数",
+                    "default": 0,
+                    "examples": [
+                        40
+                    ]
+                },
+                "page_start": {
+                    "type": "integer",
+                    "title": "开始页数",
+                    "default": 0,
+                    "examples": [
+                        4
+                    ]
+                },
+                "page_n": {
+                    "type": "integer",
+                    "title": "当前返回页数",
+                    "default": 0,
+                    "examples": [
+                        40
+                    ]
+                },
+                "analysis": {
+                    "type": "array",
+                    "title": "",
+                    "items": {
+                        "type": "object",
+                        "title": "数据统计",
+                        "properties": {
+                            "time": {
+                                "type": "integer",
+                                "title": "当天时间戳",
+                                "default": 0,
+                                "examples": [
+                                    121
+                                ]
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "type": "array",
+                    "title": "",
+                    "items": {
+                        "$id": "#/properties/data/items",
+                        "type": "object",
+                        "title": "数据",
+                        "properties": {
+                            "uid": {
+                                "type": "integer",
+                                "title": "用户uid",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "nickname": {
+                                "type": "string",
+                                "title": "用户昵称",
+                                "default": "",
+                                "examples": [
+                                    "苍玛丽"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "dept_name": {
+                                "type": "string",
+                                "title": "部门名称",
+                                "default": "",
+                                "examples": [
+                                    "天河支行"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "phone": {
+                                "type": "integer",
+                                "title": "手机号",
+                                "default": "",
+                                "examples": [
+                                    "13968695824"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "data": {
+                                "type": "array",
+                                "title": "",
+                                "items": {
+                                    "type": "object",
+                                    "title": "步数积分数据",
+                                    "required": [
+                                        "time",
+                                        "score",
+                                        "step_n"
+                                    ],
+                                    "properties": {
+                                        "time": {
+                                            "type": "integer",
+                                            "title": "当天时间戳",
+                                            "default": 0,
+                                            "examples": [
+                                                121
+                                            ]
+                                        },
+                                        "sign": {
+                                            "type": "integer",
+                                            "title": "是否签到<br/> 1是；<br/> 2否",
+                                            "default": "",
+                                            "examples": [
+                                                "1"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Admin/Activity/editAct": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "type": "integer",
+                    "title": "数据id(新增时忽略)",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "admin_name": {
+                    "type": "string",
+                    "title": "发布人名称",
+                    "default": "",
+                    "examples": [
+                        "李老师"
+                    ]
+                },
+                "admin_icon": {
+                    "type": "string",
+                    "title": "发布人头像路径",
+                    "default": "",
+                    "examples": [
+                        "cc.jpg"
+                    ]
+                },
+                "title": {
+                    "type": "string",
+                    "title": "活动标题",
+                    "default": "",
+                    "examples": [
+                        "春游"
+                    ]
+                },
+                "content": {
+                    "type": "string",
+                    "title": "活动内容",
+                    "default": "",
+                    "examples": [
+                        "游游游游游游"
+                    ]
+                },
+                "fixed_times": {
+                    "type": "string",
+                    "title": "指定活动时间( 固定日期有效,逗号分隔 )",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "cover": {
+                    "type": "string",
+                    "title": "活动封面地址",
+                    "default": "",
+                    "examples": [
+                        "fdf/fdsaf.jpg"
+                    ]
+                },
+                "descr": {
+                    "type": "string",
+                    "title": "活动描述",
+                    "default": "",
+                    "examples": [
+                        "游游游游游游"
+                    ]
+                },
+                "fid": {
+                    "type": "integer",
+                    "title": "公司id",
+                    "examples": [
+                        1
+                    ]
+                },
+                "sign": {
+                    "type": "integer",
+                    "title": "是否需要签到：<br/>1、是，<br/>2、否",
+                    "default": 1,
+                    "examples": [
+                        1
+                    ]
+                },
+                "sign_coor": {
+                    "type": "string",
+                    "title": "签到地址坐标",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "sign_addr": {
+                    "type": "string",
+                    "title": "签到地址",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "sign_range": {
+                    "type": "string",
+                    "title": "签到范围",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "type": {
+                    "type": "integer",
+                    "title": "类型：<br/>1、连续时间，<br/>2、固定日期，<br/>3、工作日，<br/>4、周末",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "btime": {
+                    "type": "integer",
+                    "title": "开始时间",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "etime": {
+                    "type": "integer",
+                    "title": "结束时间(-1 为无限)",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "title",
+                "content",
+                "type",
+                "firm_id",
+                "aim_uid",
+                "not_uid",
+                "type_pk"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "integer",
+                    "title": "状态码 : <br/>0正常；",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "errstr": {
+                    "type": "string",
+                    "title": "错误提示",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "新增/修改活动",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Activity/editAct"
+        }
+    },
+    "Admin/Activity/showActList": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "fid": {
+                    "type": "integer",
+                    "title": "公司id",
+                    "default": 0,
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "nickname": {
+                    "type": "string",
+                    "title": "发布人昵称",
+                    "default": 0,
+                    "examples": [
+                        "admin"
+                    ]
+                },
+                "title": {
+                    "type": "string",
+                    "title": "活动名称",
+                    "default": 0,
+                    "examples": [
+                        "革命"
+                    ]
+                },
+                "status": {
+                    "type": "integer",
+                    "title": "状态：<br/>1、未开始，<br/>2、进行中，<br/>3、已结束",
+                    "default": 0,
+                    "examples": [
+                        "3232344"
+                    ]
+                },
+                "btime": {
+                    "type": "integer",
+                    "title": "活动开始时间",
+                    "default": 0,
+                    "examples": [
+                        "3232344"
+                    ]
+                },
+                "etime": {
+                    "type": "integer",
+                    "title": "活动结束时间",
+                    "default": 0,
+                    "examples": [
+                        "3232344"
+                    ]
+                },
+                "page_start": {
+                    "type": "integer",
+                    "title": "开始页码数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_limit": {
+                    "type": "integer",
+                    "title": "单页数量",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "time_start": {
+                    "type": "integer",
+                    "title": "开始时间",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "time_end": {
+                    "type": "integer",
+                    "title": "结束时间",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "total": {
+                    "type": "integer",
+                    "title": "总页数",
+                    "default": 0,
+                    "examples": [
+                        100
+                    ]
+                },
+                "page_start": {
+                    "type": "integer",
+                    "title": "开始页码数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_n": {
+                    "type": "integer",
+                    "title": "当前页面条数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "title": "数据ID",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "nickname": {
+                                "type": "string",
+                                "title": "发布人昵称",
+                                "default": 0,
+                                "examples": [
+                                    "admin"
+                                ]
+                            },
+                            "firm_name": {
+                                "type": "string",
+                                "title": "公司名称",
+                                "default": 0,
+                                "examples": [
+                                    "admin"
+                                ]
+                            },
+                            "title": {
+                                "type": "string",
+                                "title": "活动标题",
+                                "default": "",
+                                "examples": [
+                                    "为革命"
+                                ]
+                            },
+                            "status": {
+                                "type": "integer",
+                                "title": "状态：<br/>1、未开始，<br/>2、进行中，<br/>3、已结束",
+                                "default": 0,
+                                "examples": [
+                                    "3232344"
+                                ]
+                            },
+                            "btime": {
+                                "type": "integer",
+                                "title": "活动开始时间",
+                                "default": 0,
+                                "examples": [
+                                    "3232344"
+                                ]
+                            },
+                            "etime": {
+                                "type": "integer",
+                                "title": "活动结束时间",
+                                "default": 0,
+                                "examples": [
+                                    "3232344"
+                                ]
+                            },
+                            "atime": {
+                                "type": "integer",
+                                "title": "添加时间",
+                                "default": 0,
+                                "examples": [
+                                    "3232344"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "basic": {
+            "desc": "活动列表",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Activity/showActList"
+        }
+    },
+    "Admin/Activity/showActDetail": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": 0,
+                    "examples": [
+                        "1"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "admin_name": {
+                    "$id": "/properties/admin_name",
+                    "type": "string",
+                    "title": "发布人名称",
+                    "default": "",
+                    "examples": [
+                        "李老师"
+                    ]
+                },
+                "admin_icon": {
+                    "$id": "/properties/admin_name",
+                    "type": "string",
+                    "title": "发布人头像",
+                    "default": "",
+                    "examples": [
+                        "cc.jpg"
+                    ]
+                },
+                "title": {
+                    "$id": "/properties/title",
+                    "type": "string",
+                    "title": "活动标题",
+                    "default": "",
+                    "examples": [
+                        "春游"
+                    ]
+                },
+                "content": {
+                    "$id": "/properties/content",
+                    "type": "string",
+                    "title": "活动内容",
+                    "default": "",
+                    "examples": [
+                        "游游游游游游"
+                    ]
+                },
+                "cover": {
+                    "$id": "/properties/cover",
+                    "type": "string",
+                    "title": "活动封面地址",
+                    "default": "",
+                    "examples": [
+                        "fdf/fdsaf.jpg"
+                    ]
+                },
+                "fixed_times": {
+                    "type": "string",
+                    "title": "指定活动时间( 固定日期有效,逗号分隔 )",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "descr": {
+                    "$id": "/properties/descr",
+                    "type": "string",
+                    "title": "活动描述",
+                    "default": "",
+                    "examples": [
+                        "游游游游游游"
+                    ]
+                },
+                "firm_name": {
+                    "$id": "/properties/titlenickname",
+                    "type": "string",
+                    "title": "公司名称",
+                    "default": 0,
+                    "examples": [
+                        "admin"
+                    ]
+                },
+                "fid": {
+                    "type": "integer",
+                    "title": "公司id",
+                    "examples": [
+                        1
+                    ]
+                },
+                "sign": {
+                    "$id": "/properties/sign",
+                    "type": "integer",
+                    "title": "是否需要签到：<br/>1、是，<br/>2、否",
+                    "default": 1,
+                    "examples": [
+                        1
+                    ]
+                },
+                "sign_coor": {
+                    "$id": "/properties/sign_coor",
+                    "type": "string",
+                    "title": "签到地址坐标",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "sign_addr": {
+                    "$id": "/properties/sign_addr",
+                    "type": "string",
+                    "title": "签到地址",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "sign_range": {
+                    "$id": "/properties/sign_range",
+                    "type": "string",
+                    "title": "签到范围",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "type": {
+                    "$id": "/properties/type",
+                    "type": "integer",
+                    "title": "类型：<br/>1、连续时间，<br/>2、固定日期，<br/>3、工作日，<br/>4、周末",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "btime": {
+                    "$id": "/properties/btime",
+                    "type": "integer",
+                    "title": "开始时间",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "etime": {
+                    "$id": "/properties/etime",
+                    "type": "integer",
+                    "title": "结束时间(-1 为无限)",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "atime": {
+                    "$id": "/properties/honor",
+                    "type": "integer",
+                    "title": "添加时间",
+                    "default": "",
+                    "examples": [
+                        1
+                    ]
+                },
+                "qr_code": {
+                    "$id": "/properties/qr_code",
+                    "type": "string",
+                    "title": "二维码路径",
+                    "default": "",
+                    "examples": [
+                        "fdsf/fddsfd/safd.jpg"
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "活动详情",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Activity/showActDetail"
+        }
+    },
+    "Admin/Activity/delAct": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "definitions": [],
+            "properties": {
+                "status": {
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败；<br/>5参数错误；<br/>13、数据不存在<br/>20020、数据不可删除",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "删除活动",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Activity/delAct"
+        }
+    },
+    "Admin/System/roleList": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "definitions": [],
+            "properties": {
+                "total": {
+                    "type": "integer",
+                    "title": "总页数",
+                    "default": 0,
+                    "examples": [
+                        100
+                    ]
+                },
+                "page_start": {
+                    "type": "integer",
+                    "title": "起始页码 ",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_n": {
+                    "type": "integer",
+                    "title": "当前返回的记录条数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "title": "数据id ",
+                                "default": 0,
+                                "examples": [
+                                    2
+                                ]
+                            },
+                            "name": {
+                                "type": "string",
+                                "title": "名称",
+                                "default": "",
+                                "examples": [
+                                    "管理员"
+                                ]
+                            },
+                            "rem": {
+                                "type": "string",
+                                "title": "备注",
+                                "default": "",
+                                "examples": [
+                                    "管理员的"
+                                ]
+                            },
+                            "status": {
+                                "type": "integer",
+                                "title": "状态；1正常；0禁用 ",
+                                "default": 0,
+                                "examples": [
+                                    0
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "basic": {
+            "desc": "角色列表",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/System/roleList"
+        }
+    },
+    "Admin/System/showAuthGroupDetail": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "definitions": [],
+            "properties": {
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": 0,
+                    "examples": [
+                        2
+                    ]
+                },
+                "title": {
+                    "type": "string",
+                    "title": "名称",
+                    "default": "",
+                    "examples": [
+                        "Spuer"
+                    ]
+                },
+                "rem": {
+                    "type": "string",
+                    "title": "备注",
+                    "default": "",
+                    "examples": [
+                        "Spuer"
+                    ]
+                },
+                "status": {
+                    "type": "integer",
+                    "title": "状态；1正常；0禁用 ",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "rule": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "title": "详细规则",
+                        "default": 0,
+                        "examples": [
+                            21
+                        ]
+                    }
+                }
+            }
+        },
+        "basic": {
+            "desc": "角色详情",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/System/showAuthGroupDetail"
+        }
+    },
+    "Admin/System/showAuthRule": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                }
+            },
+            "required": [
+                "token"
+            ]
+        },
+        "response": {
+            "type": "array",
+            "definitions": [],
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "title": "数据id",
+                        "default": 0,
+                        "examples": [
+                            2
+                        ]
+                    },
+                    "title": {
+                        "type": "string",
+                        "title": "菜单名",
+                        "default": "",
+                        "examples": [
+                            "首页"
+                        ]
+                    },
+                    "data": {
+                        "type": "array",
+                        "title": "页面详情",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "title": "数据id ",
+                                    "default": 0,
+                                    "examples": [
+                                        2
+                                    ]
+                                },
+                                "title": {
+                                    "type": "string",
+                                    "title": "页面名称",
+                                    "default": "",
+                                    "examples": [
+                                        "首页"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "basic": {
+            "desc": "角色详情规则",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/System/showAuthRule"
+        }
+    },
+    "Admin/System/editAuthGroup": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "type": "integer",
+                    "title": "数据ID(新增时忽略)",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "title": {
+                    "type": "integer",
+                    "title": "角色名称",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "status": {
+                    "type": "string",
+                    "title": "状态 : <br/>1、正常；<br/>2、禁用",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "rules": {
+                    "type": "string",
+                    "title": "角色组规则",
+                    "default": "",
+                    "examples": [
+                        "25,1"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "name"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败；<br/>5参数错误<br/>14权限不足",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "添加/编辑角色",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/System/editAuthGroup"
+        }
+    },
+    "Admin/System/delAuthGroup": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "type": "integer",
+                    "title": "数据ID(新增时忽略)",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败；<br/>5参数错误<br/>12还有使用该角色的用户<br/>13数据不存在",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "删除角色",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/System/delAuthGroup"
+        }
+    },
+    "Admin/File/upload": {
+        "params": [],
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "状态码 : 0正常；1失败",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "errstr": {
+                    "$id": "/properties/errstr",
+                    "type": "string",
+                    "title": "错误提示",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "url": {
+                    "$id": "/properties/url",
+                    "type": "string",
+                    "title": "文件URL",
+                    "default": "",
+                    "examples": [
+                        "http : //pd.lbyisheng.com/t/upload/pire/do07/2/f4c2.jpg"
+                    ]
+                },
+                "path": {
+                    "$id": "/properties/path",
+                    "type": "string",
+                    "title": "文件path",
+                    "default": "",
+                    "examples": [
+                        "/upload/pire/do07/2/f4c2.jpg"
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "上传文件",
+            "method": "/WHAct/index.php/Admin/File/upload",
+            "url": null
+        }
+    },
+    "Admin/File/importDepart": {
+        "params": [],
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "The Status Schema ",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "errstr": {
+                    "$id": "/properties/errstr",
+                    "type": "string",
+                    "title": "The Errstr Schema ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "url": {
+                    "$id": "/properties/url",
+                    "type": "string",
+                    "title": "The Url Schema ",
+                    "default": "",
+                    "examples": [
+                        "http : //pd.lbyisheng.com/t/upload/pire/do07/2/f4c2.jpg"
+                    ]
+                },
+                "path": {
+                    "$id": "/properties/path",
+                    "type": "string",
+                    "title": "The Path Schema ",
+                    "default": "",
+                    "examples": [
+                        "/upload/pire/do07/2/f4c2.jpg"
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "导入部门",
+            "method": "/WHAct/index.php/Admin/File/importDepart",
+            "url": "---\t！ ！ 这里必须使用 form multipart 格式！ ！ \ttoken "
+        }
+    },
+    "Admin/File/importUser": {
+        "params": [],
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "状态码：<br/>0、成功；<br/>1、失败；<br/>20050、excel 格式错<br/>误<br/>20051、用户名或手<br/>机号已存在<br/><br/>20052、部门不存在",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "errstr": {
+                    "$id": "/properties/errstr",
+                    "type": "array",
+                    "title": "错误提示",
+                    "default": "",
+                    "items": {
+                        "$id": "/properties/errstr",
+                        "type": "string",
+                        "title": "提示详情",
+                        "default": "",
+                        "examples": [
+                            "139049078008已存在",
+                            "139049078008已存在"
+                        ]
+                    }
+                }
+            }
+        },
+        "basic": {
+            "desc": " 101example0729xxx  \t//token | string | 必填",
+            "method": " 12\t\t\t\t\t   //公司int | 必填",
+            "url": " 12\t\t\t       //部门id | 非必填例"
+        }
+    },
+    "VCmd/Index/setAct": {
+        "param": {
+            "type": "obj",
+            "value": []
+        },
+        "response": {
+            "type": "obj",
+            "value": {
+                "status": {
+                    "type": "int",
+                    "value": "0",
+                    "desc": "状态：0、成功，1、失败"
+                },
+                "errstr": {
+                    "type": "string",
+                    "value": "错误提示",
+                    "desc": "错误提示"
+                }
+            }
+        },
+        "basic": {
+            "desc": null,
+            "method": "每天零点~~~#### setAct",
+            "url": "更新活动状态"
+        }
+    },
+    "Admin/User/delFirm": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id",
+                "cover"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "状态码",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "errstr": {
+                    "$id": "/properties/cover",
+                    "type": "string",
+                    "title": "错误提示",
+                    "default": "",
+                    "examples": [
+                        "errs"
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "删除公司",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/delFirm"
+        }
+    },
+    "Admin/User/showFirmList": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "name": {
+                    "$id": "/properties/data/items/properties/name",
+                    "type": "string",
+                    "title": "公司名称",
+                    "default": "",
+                    "examples": [
+                        "黄金"
+                    ]
+                },
+                "status": {
+                    "$id": "/properties/data/items/properties/status",
+                    "type": "integer",
+                    "title": "状态1正常；2禁用",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                }
+            },
+            "required": [
+                "token"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "total": {
+                    "$id": "/properties/total",
+                    "type": "integer",
+                    "title": "总页数",
+                    "default": 0,
+                    "examples": [
+                        100
+                    ]
+                },
+                "page_start": {
+                    "$id": "/properties/page_start",
+                    "type": "integer",
+                    "title": "开始页码数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page_n": {
+                    "$id": "/properties/page_n",
+                    "type": "integer",
+                    "title": "当前页面条数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "data": {
+                    "$id": "/properties/data",
+                    "type": "array",
+                    "items": {
+                        "$id": "http : //example.com/example.json",
+                        "type": "object",
+                        "definitions": [],
+                        "$schema": "http : //json-schema.org/draft-07/schema#",
+                        "properties": {
+                            "id": {
+                                "$id": "/properties/id",
+                                "type": "integer",
+                                "title": "部门id",
+                                "default": 0,
+                                "examples": [
+                                    77
+                                ]
+                            },
+                            "name": {
+                                "$id": "/properties/name",
+                                "type": "string",
+                                "title": "公司名称",
+                                "default": "",
+                                "examples": [
+                                    "财会"
+                                ]
+                            },
+                            "num": {
+                                "type": "integer",
+                                "title": "员工总数",
+                                "default": "",
+                                "examples": [
+                                    "11"
+                                ]
+                            },
+                            "status": {
+                                "$id": "/properties/data/items/properties/status",
+                                "type": "integer",
+                                "title": "状态1正常；2禁用",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "basic": {
+            "desc": "公司列表",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/showFirmList"
+        }
+    },
+    "Admin/User/editFirm": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "公司id（新增忽略）",
+                    "default": 0,
+                    "examples": [
+                        77
+                    ]
+                },
+                "name": {
+                    "$id": "/properties/name",
+                    "type": "string",
+                    "title": "公司名称",
+                    "default": "",
+                    "examples": [
+                        "财会"
+                    ]
+                },
+                "intro": {
+                    "$id": "/properties/intro",
+                    "type": "string",
+                    "title": "公司介绍",
+                    "default": "",
+                    "examples": [
+                        "财会"
+                    ]
+                },
+                "cover": {
+                    "$id": "/properties/name",
+                    "type": "string",
+                    "title": "公司封面",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                },
+                "logo": {
+                    "$id": "/properties/logo",
+                    "type": "string",
+                    "title": "公司logo",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                },
+                "contact": {
+                    "$id": "/properties/logo",
+                    "type": "string",
+                    "title": "公司联系人",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                },
+                "contact_phone": {
+                    "$id": "/properties/logo",
+                    "type": "string",
+                    "title": "公司联系人电话",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                },
+                "contact_addr": {
+                    "$id": "/properties/logo",
+                    "type": "string",
+                    "title": "公司地址",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "name",
+                "cover"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "status": {
+                    "$id": "/properties/status",
+                    "type": "integer",
+                    "title": "状态吗；<br/>0成功；<br/>1失败；<br/>5参数错误",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "error": {
+                    "$id": "/properties/error",
+                    "type": "string",
+                    "title": "错误提示 ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "添加/编辑公司",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/editFirm"
+        }
+    },
+    "Admin/User/showFirmDetail": {
+        "params": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "properties": {
+                "token": {
+                    "$id": "/properties/token",
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "数据id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id",
+                "cover"
+            ]
+        },
+        "response": {
+            "$id": "http : //example.com/example.json",
+            "type": "object",
+            "definitions": [],
+            "$schema": "http : //json-schema.org/draft-07/schema#",
+            "properties": {
+                "id": {
+                    "$id": "/properties/id",
+                    "type": "integer",
+                    "title": "公司id",
+                    "default": 0,
+                    "examples": [
+                        77
+                    ]
+                },
+                "name": {
+                    "$id": "/properties/name",
+                    "type": "string",
+                    "title": "公司名称",
+                    "default": "",
+                    "examples": [
+                        "财会"
+                    ]
+                },
+                "intro": {
+                    "$id": "/properties/intro",
+                    "type": "string",
+                    "title": "公司介绍",
+                    "default": "",
+                    "examples": [
+                        "财会"
+                    ]
+                },
+                "cover": {
+                    "$id": "/properties/name",
+                    "type": "string",
+                    "title": "公司封面",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                },
+                "logo": {
+                    "$id": "/properties/logo",
+                    "type": "string",
+                    "title": "公司logo",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                },
+                "contact": {
+                    "$id": "/properties/logo",
+                    "type": "string",
+                    "title": "公司联系人",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                },
+                "contact_phone": {
+                    "$id": "/properties/logo",
+                    "type": "string",
+                    "title": "公司联系人电话",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                },
+                "contact_addr": {
+                    "$id": "/properties/logo",
+                    "type": "string",
+                    "title": "公司地址",
+                    "default": "",
+                    "examples": [
+                        "232.jpg"
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "公司详情",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/User/showFirmDetail"
+        }
+    },
+    "Admin/Activity/getQRCode": {
+        "params": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "title": "token",
+                    "default": "",
+                    "examples": [
+                        "sdaf2323fsdf"
+                    ]
+                },
+                "id": {
+                    "type": "integer",
+                    "title": "活动id",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "scene": {
+                    "type": "string",
+                    "title": "参数",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "page": {
+                    "type": "string",
+                    "title": "页面地址",
+                    "default": "",
+                    "examples": [
+                        "/index/index"
+                    ]
+                },
+                "width": {
+                    "type": "string",
+                    "title": "二维码的宽度，单位 px，最小 280px，最大 1280px",
+                    "default": "",
+                    "examples": [
+                        "500"
+                    ]
+                }
+            },
+            "required": [
+                "token",
+                "id",
+                "content",
+                "cover",
+                "type",
+                "type_pk"
+            ]
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "integer",
+                    "title": "状态码 : <br/>0正常；",
+                    "default": 0,
+                    "examples": [
+                        1
+                    ]
+                },
+                "errstr": {
+                    "type": "string",
+                    "title": "错误提示",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "url": {
+                    "type": "string",
+                    "title": "图片url",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "basic": {
+            "desc": "生成二维码",
+            "method": "POST",
+            "url": "/WHAct/index.php/Admin/Activity/getQRCode"
+        }
+    }
+}

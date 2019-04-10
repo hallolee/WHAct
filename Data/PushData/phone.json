@@ -1,0 +1,56 @@
+{
+    "1":{
+        "desc": "app 推送(major 1)",
+        "class":"Push\\Controller\\PhonePushController",
+        "children": {
+            "1": {
+                "desc":"ios_apple(apple ios 系统，minor 1)",
+                "fun":"apple",
+                "1": {
+                    "desc":"push data(当前 push_id 包含的数据信息, basic、data 数据均为必填数据)",
+                    "apns_host":"gateway.sandbox.push.apple.com",
+                    "apns_port":"2195",
+                    "apns_cert":"./Data/cl.pem",
+                    "apns_pass":"iitrend2018",
+                    "basic":{
+                        "device_token":"用户device_token"
+                    },
+                    "data": {
+                        "src":"src:loc-key必须是字符串",
+                        "args":"data 数据部分:约定处理"
+                    }
+                },
+                "2": {
+                    "desc":"push data(当前 push_id 包含的数据信息, basic、data 数据均为必填数据)",
+                    "apns_host":"gateway.sandbox.push.apple.com",
+                    "apns_port":"2195",
+                    "apns_cert":"./Data/cl.pem",
+                    "apns_pass":"iitrend2018",
+                    "basic":{
+                        "device_token":"用户device_token"
+                    },
+                    "data": {
+                        "title":"消息标题",
+                        "message":"消息内容",
+                        "badge":"消息显示数量",
+                        "sound":"声音"
+                    }
+                }
+            },
+            "2": {
+                "desc":"android_huawei(华为 android 系统，minor 2)",
+                "fun":"",
+                "1": {
+                    "desc":"push data(当前 push_id 包含的数据信息, basic、data 数据均为必填数据)",
+                    "basic":{
+                        "device_token":"用户device_token"
+                    },
+                    "data": {
+                        "src":"",
+                        "args":""
+                    }
+                }
+            }
+        }
+    }
+}

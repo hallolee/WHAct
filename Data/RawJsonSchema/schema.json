@@ -1,0 +1,12 @@
+{
+    "Client/Index/getConf":"",
+    "Client/Index/getICBCJsApi":{
+        "type":"object",
+        "properties":{
+            "url":{
+                "type":"string"
+            }
+        },
+        "required":["url"]
+    }
+}

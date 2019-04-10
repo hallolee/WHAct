@@ -1,0 +1,146 @@
+<?php
+
+/*
+* @ common 公共配置
+*/
+ //数据库名
+$c[ 'DB_NAME' ]  = 'test_whact';
+// 用户名
+$c[ 'DB_USER' ]  = 'lbys';
+// 密码
+$c[ 'DB_PWD' ]   = '123456';
+//数据库报错、调试模式
+$c[ 'DB_DEBUG' ] = true;
+$c[ 'LOG_RECORD' ] = true;
+// EMERG 严重错误，导致系统崩溃无法使用
+// ALERT 警戒性错误， 必须被立即修改的错误
+// CRIT 临界值错误， 超过临界值的错误
+// ERR 一般性错误
+// WARN 警告性错误， 需要发出警告的错误
+// NOTIC 通知，程序可以运行但是还不够完美的错误
+// INFO 信息，程序输出信息
+// DEBUG 调试，用于调试信息
+// SQL SQL语句，该级别只在调试模式开启时有效
+// IITREND 自定义级别，用于开发者主动记录的日志
+$c['DEV_LOG_LEVEL'] = 'IITREND';
+$c['LOG_LEVEL'] = 'EMERG,ALERT,CRIT,ERR,WARN,NOTIC,INFO,DEBUG,SQL,'.$c['DEV_LOG_LEVEL'];// 允许记录的日志级别
+
+// false表示URL区分大小写 true则表示不区分大小写
+$c['URL_CASE_INSENSITIVE'] = false;
+
+//memcached 缓存服务器
+$c[ 'MEMCACHED_SERVER' ] = [
+    [ '127.0.0.1', '11211', '0' ], 
+];
+//缓存有效时间
+$c[ 'DATA_CACHE_TIME' ] = 900;
+
+//脚本单次调用限制最长时间
+$c[ 'VCMD_FUNC_TIME' ] = 900;
+
+// token 存放位置
+$c[ 'TOKEN_PATH' ] = 'token/';
+// token 有效时间
+$c[ 'DATOKEN_EXPIRE' ] = 3600*24;
+
+// token 缓存类型
+$c[ 'TOKEN_CACHE_TYPE' ] = TOKEN_TYPE_FILE;
+
+$c[ 'TOKEN_KEY' ] = '/token';
+// token 所存的数据库索引
+$c[ 'TOKEN_DATABASE_INDEX' ] = 1;
+
+// 项目名
+$c[ 'APPNAME' ]     = 'WHAct';
+//链接头部
+$c[ 'PREURL' ]      = C('SCHEME').'://'.$_SERVER['HTTP_HOST'].'/'.$c['APPNAME']."/";
+//项目链接
+$c[ 'PREENT' ]      = $c['PREURL']."index.php/";
+
+// 图片链接
+$c[ 'IMG_PREURL' ]  = $c[ 'PREURL' ];
+
+// 保留位数
+$c[ 'DECIMALS' ] = 3;
+
+// 推送模块配置
+$c[ 'PUSH_DATA_PATH' ] = './Data/PushData';
+
+// json schema 参数
+$c[ 'RAW_JSON_SCHEMA' ] = './Data/RawJsonSchema/';
+
+// wechat authorized method: WX_DISPLAY、display, WX_QUIET、quiet
+$c[ 'WECHAT_AUTH' ] = WX_DISPLAY;
+
+// wechat unionid ：COL_OPEN、开启记录，COL_CLOSE、关闭记录
+$c[ 'WECHAT_UNIONID' ] = COL_OPEN;
+
+// apple push ：APPLE_PUSH_SSL，APPLE_PUSH_HTTP2
+$c[ 'APPLE_PUSH_TYPE' ] = APPLE_PUSH_SSL;
+$c[ 'PUSH_CHUNK_NUM' ] = 100;
+
+//wechat: 第一个为默认项
+$c[ 'WECHAT_CONF' ] = [
+    '1' => [
+        'COL'               => 'openid',
+        'TUPLE_FILE'        => '!lbreath',
+        'ACCESSTOKEN_FILE'  => '!lbreath',
+    ],
+    '2' => [
+        'COL'               => 'openid_app',
+        'TUPLE_FILE'        => '!lbyixue',
+        'ACCESSTOKEN_FILE'  => '!lbyixue',
+    ],
+    '3' => [
+        'COL'               => 'openid_mp',
+        'TUPLE_FILE'        => '!whact',
+        'ACCESSTOKEN_FILE'  => '!whact',
+    ]
+];
+
+$c[ 'WXCONF_URL' ]  = 'http://uno_srv/wechat/cgi-bin/wxconf';
+$c[ 'WXCONF_QRCODE_URL' ]  = 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=';
+
+// ali pay config
+$c[ 'ALIPAY_CONF' ] = [
+    'gateway_url' => 'https://openapi.alipay.com/gateway.do',
+    'charset'     => 'UTF-8',
+    'sign_type'   => 'RSA2',
+
+    'app_id' => '',
+    'merchant_private_key' => '',
+    'alipay_public_key' => '',
+];
+
+//开启测试环境
+$c[ 'IS_TEST' ] = true;
+
+//开启跨域
+$c[ 'ALLOW_CORS' ] = true;
+
+//测试使用的便捷二维码
+$c['TEST_DATA'] = [
+    'PHONE_TEST_CODE' => '0000',
+    'OPENID'          => 'iit201802101623test',
+    'OPENID_APP'      => 'iit201804261904test',
+    'OPENID_MP'       => 'iit201805081447test',
+    'WECHAT_DATA'     => [
+        'nickname'  => 'iitrend-test',
+        'province'  => 'GuangDong',
+        'headimgurl'=> '',
+        'unionid'   => 'iit201800000000test',
+    ]
+];
+
+// admin--user--pass--group_id
+$c[ 'ADMIN_USER' ] = 'su';
+$c[ 'ADMIN_PASS' ] = 'b93c7740e4785c7dcb5030072f22150e';
+$c[ 'ADMIN_GROUP' ] = '-1';
+
+
+// image upload temp_path
+$c[ 'img_temp_path' ] = 'uploads/temp/';
+
+
+return $c;
+?>

@@ -1,0 +1,34 @@
+{
+    "2":{
+        "desc": "短信推送(major 2)",
+        "class":"Push\\Controller\\SmsPushController",
+        "children": {
+            "1": {
+                "desc":"aixun(短信服务提供商，爱讯，短信内容需严格按照模板配置写入，minor 1)",
+                "fun":"pushByAiXun",
+                "1": {
+                    "desc":"push data(当前 push_id 包含的数据信息, basic、data 数据均为必填数据)",
+                    "basic":{
+                        "phone":"user phone"
+                    },
+                    "data": {
+                        "content":"push content"
+                    }
+                }
+            },
+            "2": {
+                "desc":"huyi(短信服务提供商，互亿，短信内容需严格按照模板配置写入，minor 2)",
+                "fun":"pushByHuYi",
+                "1": {
+                    "desc":"push data(当前 push_id 包含的数据信息, basic、data 数据均为必填数据)",
+                    "basic":{
+                        "phone":"user phone"
+                    },
+                    "data": {
+                        "content":"push content"
+                    }
+                }
+            }
+        }
+    }
+}
